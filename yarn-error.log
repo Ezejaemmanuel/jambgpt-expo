@@ -1,0 +1,169 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\HP\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install --silent
+
+PATH: 
+  C:\Users\HP\AppData\Local\Temp\yarn--1715417400381-0.9187583541145206;C:\Users\HP\AppData\Local\Yarn\Data\global\node_modules\.bin;C:\Users\HP\AppData\Local\Yarn\Data\link\node_modules\.bin;C:\Users\HP\AppData\Local\Yarn\bin;C:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python311\Scripts\;C:\Python311\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python311\Scripts\;C:\Python311\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python311\Scripts\;C:\Python311\;C:\Windows\System32;C:\Windows\System32;C:\Users\HP\AppData\Local\Microsoft\WindowsApps;C:\Users\HP\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2023.2.1\bin;C:\Users\HP\AppData\Local\GitHubDesktop\bin;C:\Users\HP\AppData\Roaming\npm;C:\Windows\System32;C:\Users\HP\AppData\Local\Microsoft\WindowsApps;C:\Users\HP\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2023.2.1\bin;C:\Users\HP\AppData\Local\GitHubDesktop\bin;C:\Users\HP\AppData\Roaming\npm;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\PostgreSQL\15\bin;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Program Files\php-8.3.3-Win32-vs16-x64;C:\Program Files\Docker\Docker\resources\bin;%NVM_HOME%;%NVM_SYMLINK%;C:\Windows\System32;C:\Users\HP\AppData\Local\Microsoft\WindowsApps;C:\Users\HP\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2023.2.1\bin;C:\Users\HP\AppData\Local\GitHubDesktop\bin;C:\Users\HP\AppData\Roaming\npm;C:\Windows\System32;C:\Users\HP\AppData\Local\Microsoft\WindowsApps;C:\Users\HP\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2023.2.1\bin;C:\Users\HP\AppData\Local\GitHubDesktop\bin;C:\Users\HP\AppData\Roaming\npm;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\PostgreSQL\15\bin;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Program Files\php-8.3.3-Win32-vs16-x64;C:\Program Files\Docker\Docker\resources\bin;C:\Users\HP\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Windows\System32;C:\Users\HP\AppData\Local\Microsoft\WindowsApps;C:\Users\HP\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2023.2.1\bin;C:\Users\HP\AppData\Local\GitHubDesktop\bin;C:\Users\HP\AppData\Roaming\npm;C:\Windows\System32;C:\Users\HP\AppData\Local\Microsoft\WindowsApps;C:\Users\HP\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2023.2.1\bin;C:\Users\HP\AppData\Local\GitHubDesktop\bin;C:\Users\HP\AppData\Roaming\npm;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\PostgreSQL\15\bin;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Program Files\php-8.3.3-Win32-vs16-x64;C:\Program Files\Docker\Docker\resources\bin;C:\Users\HP\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\HP\AppData\Local\pnpm;C:\Users\HP\AppData\Local\Microsoft\WindowsApps;C:\Users\HP\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2023.2.1\bin;C:\Users\HP\AppData\Local\GitHubDesktop\bin;C:\Users\HP\AppData\Roaming\npm;C:\Users\HP\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\HP\.bun\bin;\\?\;C:\Users\HP\AppData\Roaming\nvm;C:\Program Files\nodejs
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.13.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+
+npm manifest: 
+  {
+    "name": "testing-nativewind",
+    "version": "1.0.0",
+    
+    "main": "expo-router/entry",
+    
+    "scripts": {
+      "android": "expo start --android",
+      "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" && prettier -c \"**/*.{js,jsx,ts,tsx,json}\"",
+      "format": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
+      "ios": "expo start --ios",
+      "start": "expo start",
+      "web": "expo start --web"
+    },
+    "dependencies": {
+      
+        "nativewind": "^4.0.1",
+      
+      
+        "@roninoss/icons": "^0.0.4",
+        "@shopify/flash-list": "1.6.3",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.0",
+        "expo-dev-client": "~3.3.8",
+        "expo-navigation-bar": "~2.8.1",
+        "tailwind-merge": "^2.2.1",
+        
+        "react-native-uitextview": "^1.1.4",
+        
+        "react-native-pager-view": "6.2.3",
+        
+          "@react-native-community/datetimepicker": "7.7.0",
+        
+        
+          "@react-native-segmented-control/segmented-control": "2.4.1",
+        
+        
+          "@react-native-picker/picker": "2.6.1",
+        
+        
+          "@gorhom/bottom-sheet": "^4",
+        
+        
+          "@expo/react-native-action-sheet": "^4.0.1",
+        
+        
+          "zeego": "^1.9.1",
+          "react-native-ios-context-menu": "^2.5.0",
+          "react-native-ios-utilities": "^4.4.0",
+          "@react-native-menu/menu": "^0.9.1",
+        
+        
+          "expo-store-review": "~6.8.3",
+        
+        
+          "@react-native-community/slider": "4.4.2",
+        
+      
+      
+      
+  
+      
+  
+      
+  
+      
+        "@react-navigation/native": "^6.1.7",
+        "react-native-gesture-handler": "~2.14.0",
+        "react-native-safe-area-context": "^4.8.2",
+        "react-native-screens": "~3.29.0",
+      
+  
+      
+  
+      
+  
+      
+  
+      
+        "@react-navigation/drawer": "^6.6.6",
+        "@react-navigation/bottom-tabs": "^6.5.8",
+      
+      
+      
+        "@expo/vector-icons": "^14.0.0",
+        "expo-linking": "~6.2.2",
+        "expo-router": "^3.4.7", 
+        "expo-constants": "~15.4.5",     
+        "expo-system-ui": "~2.9.3",
+        "expo-web-browser": "~12.8.2",
+        "react-dom": "18.2.0",
+        "react-native-reanimated": "~3.6.2",
+        "react-native-web": "~0.19.10",
+      
+  
+  	
+  
+  	
+    
+     
+  
+      "expo": "~50.0.7",
+      "expo-status-bar": "~1.11.1",
+      "react": "18.2.0",
+      "react-native": "0.73.6"
+    },
+    "devDependencies": {
+    
+    
+      "@babel/core": "^7.20.0",
+      "@types/react": "~18.2.14",
+      "@typescript-eslint/eslint-plugin": "^7.7.0",
+      "@typescript-eslint/parser": "^7.7.0",
+      "eslint": "^8.57.0",
+      "eslint-config-universe": "^12.0.1",
+      "prettier": "^3.2.5",
+      
+        "tailwindcss": "^3.4.0",
+        "prettier-plugin-tailwindcss": "^0.5.11",
+      
+      
+      "typescript": "^5.4.5"
+    },
+    "eslintConfig": {
+      "extends": "universe/native"
+    },
+    
+      "resolutions": {
+        "expo-modules-core": "~1.11.0"
+      },
+      "overrides": {
+        "expo-modules-core": "~1.11.0"
+      },
+        
+    
+      "expo": {
+        "install": {
+          "exclude": ["react-native-safe-area-context"]
+        }
+      },
+    
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
