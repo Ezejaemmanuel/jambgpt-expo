@@ -2,9 +2,9 @@ import { Icon } from '@roninoss/icons';
 import { Pressable, View } from 'react-native';
 import Animated, { LayoutAnimationConfig, ZoomInRotate } from 'react-native-reanimated';
 
-import { cn } from '~/lib/cn';
-import { useColorScheme } from '~/lib/useColorScheme';
-import { COLORS } from '~/theme/colors';
+import { cn } from '@/lib/cn';
+import { useColorScheme } from '@/lib/useColorScheme';
+import { COLORS } from '@/theme/colors';
 
 export function ThemeToggle() {
   const { colorScheme, toggleColorScheme } = useColorScheme();
@@ -14,9 +14,7 @@ export function ThemeToggle() {
         className="items-center justify-center"
         key={`toggle-${colorScheme}`}
         entering={ZoomInRotate}>
-        <Pressable
-          onPress={toggleColorScheme}
-          className="opacity-80">
+        <Pressable onPress={toggleColorScheme} className="opacity-80">
           {colorScheme === 'dark'
             ? ({ pressed }) => (
                 <View className={cn('px-0.5', pressed && 'opacity-50')}>

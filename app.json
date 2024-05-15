@@ -3,29 +3,31 @@
     "name": "testing-nativewind",
     "slug": "testing-nativewind",
     "version": "1.0.0",
-    
-      "scheme": "testing-nativewind",
-      "web": {
-        "bundler": "metro",
-        "output": "static",
-        "favicon": "./assets/favicon.png"
-      },
-      "plugins": [
+    "scheme": "testing-nativewind",
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
       "expo-router",
-      
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "13.5"
+          }
+        }
+      ],
+      "expo-secure-store"
     ],
-      "experiments": {
-        "typedRoutes": true
-        
-          ,"tsconfigPaths": true
-        
-      },
-    
+    "experiments": {
+      "typedRoutes": true,
+      "tsconfigPaths": true
+    },
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    
     "userInterfaceStyle": "automatic",
-     
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -41,7 +43,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.jambgpt.org"
     }
   }
 }

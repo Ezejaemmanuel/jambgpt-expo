@@ -1,8 +1,8 @@
 import { Picker as RNPicker } from '@react-native-picker/picker';
 import { View } from 'react-native';
 
-import { useColorScheme } from '~/lib/useColorScheme';
-import { cn } from '~/lib/cn';
+import { useColorScheme } from '@/lib/useColorScheme';
+import { cn } from '@/lib/cn';
 
 export function Picker<T>({
   mode = 'dropdown',
@@ -16,10 +16,9 @@ export function Picker<T>({
   return (
     <View
       className={cn(
-        'bg-background border border-background ios:shadow-sm ios:shadow-black/5 rounded-md',
+        'ios:shadow-sm ios:shadow-black/5 rounded-md border border-background bg-background',
         className
-      )}
-    >
+      )}>
       <RNPicker
         mode={mode}
         style={
