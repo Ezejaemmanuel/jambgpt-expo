@@ -4,10 +4,10 @@ import { Ionicons, MaterialIcons, FontAwesome } from '@expo/vector-icons';
 
 const LandPageHeader = () => {
   return (
-    <View className="flex flex-1 flex-row items-center justify-between bg-neutral-950 p-4">
+    <View className="flex flex-1 flex-row items-center justify-between  bg-neutral-800 p-2">
       <View className="flex flex-row items-center">
-        <Ionicons name="person" size={24} color="white" />
-        <Text className="ml-2 text-lg text-white">Welcome, Emma</Text>
+        <Ionicons name="person" size={24} color="green" />
+        <Text className="ml-2 text-sm  font-medium  text-zinc-300">Welcome, Emma</Text>
       </View>
       <View className="flex flex-row items-center">
         <TouchableOpacity className="mr-4">

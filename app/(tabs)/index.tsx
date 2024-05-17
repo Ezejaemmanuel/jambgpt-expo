@@ -1,24 +1,34 @@
+import LandPageHeader from '@/components/LandPageHeader';
+import ActionButtons from '@/components/acctionnButtons';
+import ScoreCard from '@/components/scoreBoard';
 import { useSyncUserMutation } from '@/utils/hooks/useSyncUser';
 import { useAuth } from '@clerk/clerk-expo';
-import React from 'react';
-import { View, Button, Text } from 'react-native';
-
+import React, { useEffect, useState } from 'react';
+import { View, Button, Text, SafeAreaView, ScrollView } from 'react-native';
+const getRandomPoints = (): number => {
+  return Math.floor(Math.random() * (5000 - -100 + 1)) + -100;
+};
 const SyncUserPage = () => {
-  const { mutate: syncUser, isPending, isError, error, data } = useSyncUserMutation();
-  const { signOut } = useAuth();
+  const [points, setPoints] = useState<number>(0);
 
-  const handleSyncUser = () => {
-    console.log('Attempting to sync user...');
-    // syncUser(); // You might want to replace 'user-reference-id' with actual data
-    signOut();
-  };
-
+  useEffect(() => {
+    const points = getRandomPoints();
+    setPoints(points);
+  }, []);
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} className="bg-black">
-      <Button title="SignOut" onPress={handleSyncUser} disabled={isPending} />
-      {isPending && <Text>Syncing...</Text>}
-      {isError && <Text>Error: {error.message}</Text>}
-    </View>
+    <SafeAreaView className="w-full flex-1 bg-black  pt-9 ">
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View className="flex flex-1 flex-col  ">
+          <LandPageHeader />
+          <View className="py-2">
+            <ScoreCard points={points} />
+          </View>
+          <View>
+            <ActionButtons />
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

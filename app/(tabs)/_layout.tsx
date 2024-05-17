@@ -36,7 +36,16 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          header: () => <LandPageHeader />,
+          headerShown: false,
+          // headerLeft(props) {
+          //   return <LandPageHeader />;
+          // },
+          // headerRight(props) {
+          //   return null;
+          // },
+          // header(props) {
+          //   return <LandPageHeader />;
+          // },
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
             <FontAwesome

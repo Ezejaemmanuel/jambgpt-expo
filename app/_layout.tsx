@@ -32,8 +32,11 @@ import {
   IConfigDialog,
   IConfigToast,
 } from 'react-native-alert-notification';
+import { MagicModalPortal } from 'react-native-magic-modal';
 import { IColors } from 'react-native-alert-notification/lib/typescript/service/color';
 import React from 'react';
+import AppErrorBoundary from '@/components/errorBoundary';
+import LandPageHeader from '@/components/LandPageHeader';
 const lightColors: IColors = {
   label: '#000000', // Black text for light theme
   card: '#FFFFFF', // White for card backgrounds in light theme
@@ -116,52 +119,60 @@ export default function RootLayout() {
   useAppState(onAppStateChange);
   return (
     <>
-      <ClerkProvider
-        publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!}
-        tokenCache={tokenCache}>
-        <QueryClientProvider client={queryClient}>
-          <StatusBar
-            key={`root-status-bar-${isDarkColorScheme ? 'light' : 'dark'}`}
-            style={isDarkColorScheme ? 'light' : 'dark'}
-          />
+      <AppErrorBoundary>
+        <ClerkProvider
+          publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!}
+          tokenCache={tokenCache}>
+          <QueryClientProvider client={queryClient}>
+            <StatusBar
+              key={`root-status-bar-${isDarkColorScheme ? 'light' : 'dark'}`}
+              style={isDarkColorScheme ? 'light' : 'dark'}
+            />
 
-          <GestureHandlerRootView style={{ flex: 1 }}>
-            <BottomSheetModalProvider>
-              <ActionSheetProvider>
-                <NavThemeProvider value={NAV_THEME[colorScheme]}>
-                  {/* <Stack screenOptions={SCREEN_OPTIONS}>
+            <GestureHandlerRootView style={{ flex: 1 }}>
+              <BottomSheetModalProvider>
+                <ActionSheetProvider>
+                  <NavThemeProvider value={NAV_THEME[colorScheme]}>
+                    {/* <Stack screenOptions={SCREEN_OPTIONS}>
                     <Stack.Screen name="index" options={INDEX_OPTIONS} />
                     <Stack.Screen name="modal" options={MODAL_OPTIONS} />
                   </Stack> */}
-                  <AlertNotificationRoot
-                    theme={'dark'}
-                    colors={customColors}
-                    dialogConfig={dialogConfig}
-                    toastConfig={toastConfig}>
-                    <SignedIn>
-                      <Stack>
-                        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-                      </Stack>
-                    </SignedIn>
+                    <MagicModalPortal />
+                    <AlertNotificationRoot
+                      theme={'dark'}
+                      colors={customColors}
+                      dialogConfig={dialogConfig}
+                      toastConfig={toastConfig}>
+                      <SignedIn>
+                        <Stack>
+                          <Stack.Screen
+                            name="(tabs)"
+                            options={{
+                              headerShown: false,
+                            }}
+                          />
+                        </Stack>
+                      </SignedIn>
 
-                    <SignedOut>
-                      <AuthComponent />
-                    </SignedOut>
-                    <ClerkLoading>
-                      <LoadingSpinnerOverlay
-                        visible={true}
-                        // textContent={'Loading...'}
-                        color="yellow"
-                        // textStyle={{ color: '#FFF' }}
-                      />
-                    </ClerkLoading>
-                  </AlertNotificationRoot>
-                </NavThemeProvider>
-              </ActionSheetProvider>
-            </BottomSheetModalProvider>
-          </GestureHandlerRootView>
-        </QueryClientProvider>
-      </ClerkProvider>
+                      <SignedOut>
+                        <AuthComponent />
+                      </SignedOut>
+                      <ClerkLoading>
+                        <LoadingSpinnerOverlay
+                          visible={true}
+                          // textContent={'Loading...'}
+                          color="yellow"
+                          // textStyle={{ color: '#FFF' }}
+                        />
+                      </ClerkLoading>
+                    </AlertNotificationRoot>
+                  </NavThemeProvider>
+                </ActionSheetProvider>
+              </BottomSheetModalProvider>
+            </GestureHandlerRootView>
+          </QueryClientProvider>
+        </ClerkProvider>
+      </AppErrorBoundary>
     </>
   );
 }
